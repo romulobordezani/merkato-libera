@@ -1,0 +1,33 @@
+{
+  "name": "merkato-libera",
+  "version": "1.0.0",
+  "description": "Mercado Livre Front-end test ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romulobordezani/merkato-libera.git"
+  },
+  "keywords": [
+    "front-end",
+    "react",
+    "express"
+  ],
+  "author": "Romulo Bordezani <romulobordezani@gmail.com> (https://romulobordezani.com.br)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romulobordezani/merkato-libera/issues"
+  },
+  "homepage": "https://github.com/romulobordezani/merkato-libera#readme",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
