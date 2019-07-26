@@ -1,12 +1,14 @@
 import fetch from 'isomorphic-unfetch';
+import getConfig from 'next/config';
 
-const { HOST } = require('../config');
+const { publicRuntimeConfig } = getConfig();
+const { API_URL } = publicRuntimeConfig;
 
 export default async function getItemIgniter(context) {
   const { id } = context.query;
 
   try {
-    const res = await fetch(`${HOST}/api/items/${id}`);
+    const res = await fetch(`${API_URL}/api/items/${id}`);
 
     if (res.status === 404) {
       return {

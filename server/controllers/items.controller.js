@@ -18,7 +18,7 @@ async function queryItems(req, res){
       return res.sendStatus(204).end();
     }
 
-    logger.error(`API used to query ${url}, got ${data.results.length} results.`);
+    logger.debug(`API used to query ${url}, got ${data.results.length} results.`);
 
     return res.json(data.results);
   } catch (error) {

@@ -1,12 +1,14 @@
 import fetch from 'isomorphic-unfetch';
+import getConfig from 'next/config';
 
-const { HOST } = require('../config');
+const { publicRuntimeConfig } = getConfig();
+const { API_URL } = publicRuntimeConfig;
 
 export default async function searchIgniter(context) {
   const { q, limit, offset } = context.query;
 
   try {
-    const url = `${HOST}/api/items?q=${q}${limit ? `&limit=${limit}` : ''}${
+    const url = `${API_URL}/api/items?q=${q}${limit ? `&limit=${limit}` : ''}${
       offset ? `&offset=${offset}` : ''
     }`;
 
