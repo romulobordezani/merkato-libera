@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Router from 'next/router';
+
 import {Layout} from "../components/Layout";
 
-const Index = () => (
-    <Layout>
-        <h1>Mercado Livre Busca</h1>
-    </Layout>
-);
+const Index = () => {
+
+  const [q, setQ] = useState('');
+
+  const submitQuery = () => {
+    Router.push(`/items?q=${q}`)
+  };
+
+  return (
+      <Layout>
+        <h1>Mercado Livre Busca: {q} </h1>
+        <input type="text" onChange={event => setQ(event.target.value)} />
+        <button onClick={() => { submitQuery() }}>Busqueda fake</button>
+      </Layout>
+  );
+};
 
 export default Index;

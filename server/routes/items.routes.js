@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers/items.controller');
 
 router
-    .get('/', (req, res) => {
-        return res.json({ test: ' Hello World' });
-    })
-
-    .get('/:id', (req, res) => {
-        return res.json({ test: `id one`});
-    });
+    .get('/', controllers.queryItems)
+    .get('/:id', controllers.getItem);
 
 module.exports = router;

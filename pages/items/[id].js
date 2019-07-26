@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import fetch from 'isomorphic-unfetch';
 import Layout from '../../components/Layout/Layout.js';
 
 const ItemShowRoom = props => {
@@ -15,7 +16,7 @@ const ItemShowRoom = props => {
 
 ItemShowRoom.getInitialProps = async function(context) {
     const { id } = context.query;
-    const res = await fetch(`https://api.mercadolibre.com/items/${id}`);
+    const res = await fetch(`/api/items/${id}`);
     const item = await res.json();
 
     console.log(`Fetched show: ${item.id}`);
