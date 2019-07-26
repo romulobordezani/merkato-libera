@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
-import Layout from '../../components/Layout/Layout.js';
+import { Layout } from '../../components/Layout';
 
 const { HOST } = require('../../config');
 

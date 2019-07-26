@@ -1,11 +1,11 @@
 const fetch = require('isomorphic-unfetch');
-const { MELI_API } = require('../../config');
+const { MELI_API, MELI_SITE } = require('../../config');
 
 async function queryItems(req, res){
   const { q } = req.query;
 
   try {
-    const meliAPIres = await fetch(`${MELI_API}/sites/MLA/search?q=${q}`);
+    const meliAPIres = await fetch(`${MELI_API}/sites/${MELI_SITE}/search?q=${q}`);
     const data = await meliAPIres.json();
 
     if (!data.results.length) {
