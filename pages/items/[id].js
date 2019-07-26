@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
 import Layout from '../../components/Layout/Layout.js';
@@ -6,10 +7,12 @@ const { HOST } = require('../../config');
 
 const ItemShowRoom = ({ item }) => {
 
+  const router = useRouter();
+
   if (!item) {
     return (
       <Layout>
-        Producto no encontrado;
+        Producto {router.query.id} no encontrado.
       </Layout>
     )
   }
