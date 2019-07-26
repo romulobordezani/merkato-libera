@@ -20,13 +20,10 @@ export default async function searchIgniter(context) {
 
     const data = await res.json();
 
-    console.log(`Show data fetched. Count: ${data.length}`);
-
     return {
       items: data.map(entry => entry)
     };
   } catch (error) {
-    console.log(error);
     throw new Error('Bad response');
   }
 }

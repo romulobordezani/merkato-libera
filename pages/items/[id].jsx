@@ -26,7 +26,7 @@ ItemShowRoom.propTypes = {
   item: PropTypes.shape({
     title: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired
+    price: PropTypes.number.isRequired
   }).isRequired
 };
 

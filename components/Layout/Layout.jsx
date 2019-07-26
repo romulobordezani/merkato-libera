@@ -19,7 +19,7 @@ const Layout = ({ title, children }) => {
 
 Layout.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.element.isRequired
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
 };
 
 Layout.defaultProps = {

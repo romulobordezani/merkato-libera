@@ -1,4 +1,6 @@
 const fetch = require('isomorphic-unfetch');
+const logger = require('../helpers/logger');
+
 const { MELI_API, MELI_SITE } = require('../../config');
 
 async function queryItems(req, res){
@@ -16,9 +18,12 @@ async function queryItems(req, res){
       return res.sendStatus(204).end();
     }
 
+    logger.error(`API used to query ${url}, got ${data.results.length} results.`);
+
     return res.json(data.results);
   } catch (error) {
-    return res.status(500).json( error );
+    logger.error(error);
+    return res.status(500).json(error);
   }
 }
 
@@ -26,16 +31,19 @@ async function getItem(req, res) {
   const { id } = req.params;
 
   try {
-    const meliAPIres = await fetch(`${MELI_API}/items/${id}`);
+    const url = `${MELI_API}/items/${id}`;
+    const meliAPIres = await fetch(url);
     const data = await meliAPIres.json();
 
     if (meliAPIres.status === 404) {
+      logger.debug(`API could not find product with id: ${id}`);
       return res.sendStatus(404).end();
     }
 
+    logger.debug(`API used to get Item Id: ${id}`);
     return res.json(data);
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return res.status(500).json( error );
   }
 }
