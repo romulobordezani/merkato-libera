@@ -1,6 +1,6 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-import { Header } from '../Header';
+import Header from '../Header';
 import style from './Layout.scss';
 
 const Layout = props => {
@@ -15,7 +15,7 @@ const Layout = props => {
       <Header />
       {props.children}
     </div>
-  )
+  );
 };
 
 // TODO - Missing some PropTypes Here...
