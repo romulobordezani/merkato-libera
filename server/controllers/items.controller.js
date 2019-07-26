@@ -2,10 +2,11 @@ const fetch = require('isomorphic-unfetch');
 const { MELI_API, MELI_SITE } = require('../../config');
 
 async function queryItems(req, res){
-  const { q } = req.query;
+  const { q, limit, offset } = req.query;
 
   try {
-    const meliAPIres = await fetch(`${MELI_API}/sites/${MELI_SITE}/search?q=${q}`);
+    const url = `${MELI_API}/sites/${MELI_SITE}/search?q=${q}${limit ? '&limit=' + limit : ''}${offset ? '&offset=' + offset : ''}`;
+    const meliAPIres = await fetch(url);
     const data = await meliAPIres.json();
 
     if (!data.results.length) {

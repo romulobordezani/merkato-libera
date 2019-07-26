@@ -27,10 +27,11 @@ const Item = props => (
 );
 
 Item.getInitialProps = async function(context) {
-  const { q } = context.query;
+  const { q, limit, offset } = context.query;
 
   try {
-    const res = await fetch(`${HOST}/api/items?q=${q}`);
+    const url = `${HOST}/api/items?q=${q}${limit ? '&limit=' + limit : ''}${offset ? '&offset=' + offset : ''}`;
+    const res = await fetch(url);
 
     if (res.status === 204) {
       return {

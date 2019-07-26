@@ -8,7 +8,7 @@ const Index = () => {
   const [q, setQ] = useState('');
 
   const submitQuery = () => {
-    Router.push(`/items?q=${q}`)
+    Router.push(`/items?q=${q}&limit=4`)
   };
 
   return (
