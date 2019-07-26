@@ -5,7 +5,10 @@ async function queryItems(req, res){
   const { q, limit, offset } = req.query;
 
   try {
-    const url = `${MELI_API}/sites/${MELI_SITE}/search?q=${q}${limit ? '&limit=' + limit : ''}${offset ? '&offset=' + offset : ''}`;
+    const url = `${MELI_API}/sites/${MELI_SITE}/search?q=${q}${
+      limit ? '&limit=' + limit : ''}${
+      offset ? '&offset=' + offset : ''}`;
+
     const meliAPIres = await fetch(url);
     const data = await meliAPIres.json();
 

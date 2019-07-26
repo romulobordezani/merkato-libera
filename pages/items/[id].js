@@ -12,7 +12,11 @@ const ItemShowRoom = ({ item }) => {
   if (!item) {
     return (
       <Layout>
-        Producto {router.query.id} no encontrado.
+        Producto 
+        {' '}
+        {router.query.id}
+        {' '}
+no encontrado.
       </Layout>
     )
   }
@@ -21,7 +25,10 @@ const ItemShowRoom = ({ item }) => {
     <Layout title={item.title}>
       <h1>{item.title}</h1>
       <p>{item.id}</p>
-      <p>${item.price}</p>
+      <p>
+$
+        {item.price}
+      </p>
     </Layout>
   )
 };

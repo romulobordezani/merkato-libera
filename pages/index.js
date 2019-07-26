@@ -13,7 +13,12 @@ const Index = () => {
 
   return (
     <Layout>
-      <h1>Mercado Livre Busca: {q} </h1>
+      <h1>
+Mercado Livre Busca:
+        {q}
+        {' '}
+ 
+      </h1>
       <input type="text" onChange={event => setQ(event.target.value)} />
       <button onClick={() => { submitQuery() }}>Buscar</button>
     </Layout>
