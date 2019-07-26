@@ -25,10 +25,7 @@ async function getItem(req, res) {
     const meliAPIres = await fetch(`${MELI_API}/items/${id}`);
     const data = await meliAPIres.json();
 
-    console.log(meliAPIres.status);
-
     if (meliAPIres.status === 404) {
-      console.log(data);
       return res.sendStatus(404).end();
     }
 
