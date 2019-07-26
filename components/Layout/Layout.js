@@ -1,15 +1,22 @@
-import Header from '../Header/Header';
+import Head from 'next/head'
 
-const layoutStyle = {
-  margin: '80px 0',
-  padding: 0,
-};
+import { Header } from '../Header';
+import style from './Layout.scss';
 
-export default function Layout(props) {
+const Layout = props => {
+  const title = props.title || 'Mercado Livre';
+
   return (
-    <div style={layoutStyle}>
+    <div style={style.mainLayout}>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <Header />
       {props.children}
     </div>
   )
-}
+};
+
+// TODO - Missing some PropTypes Here...
+
+export default Layout;

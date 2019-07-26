@@ -18,7 +18,7 @@ const ItemShowRoom = ({ item }) => {
   }
 
   return (
-    <Layout>
+    <Layout title={item.title}>
       <h1>{item.title}</h1>
       <p>{item.id}</p>
       <p>${item.price}</p>
