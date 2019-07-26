@@ -1,9 +1,8 @@
 const express = require('express');
 const next = require('next');
 const bodyParser = require('body-parser');
+const { PORT, dev } = require('../config');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== 'production';
 const NextApp = next({ dev });
 const handle = NextApp.getRequestHandler();
 
@@ -15,15 +14,12 @@ NextApp.prepare().then(() => {
   server.use('/api/items', require('./routes/items.routes'));
 
   // Handles all next + React Stuff not matched by Express routes
-  server.get('*', (req, res) => {
-    return handle(req, res)
-  });
+  server.get('*', (req, res) => handle(req, res));
 
-  server.listen(port, err => {
+  server.listen(PORT, err => {
     if (err) {
       throw err;
     }
-
-    console.log(`Express app available on http://localhost:${port}`)
+    console.log(`Express app available on http://localhost:${PORT}`)
   })
 });

@@ -18,19 +18,37 @@ const Item = props => (
         </li>
       ))}
     </ul>
+    { props.items.length === 0 && (
+      <div>
+        Ningún resultado para la busqueda.
+      </div>
+    )}
   </Layout>
 );
 
 Item.getInitialProps = async function(context) {
   const { q } = context.query;
-  const res = await fetch(`${HOST}/api/items?q=${q}`);
-  const data = await res.json();
 
-  console.log(`Show data fetched. Count: ${data.length}`);
+  try {
+    const res = await fetch(`${HOST}/api/items?q=${q}`);
 
-  return {
-    items: data.map(entry => entry)
-  };
+    if (res.status === 204) {
+      return {
+        items: []
+      }
+    }
+
+    const data = await res.json();
+
+    console.log(`Show data fetched. Count: ${data.length}`);
+
+    return {
+      items: data.map(entry => entry)
+    };
+  } catch(error) {
+    console.log(error);
+    throw new Error("Bad response");
+  }
 };
 
 export default Item;

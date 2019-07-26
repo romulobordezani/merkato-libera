@@ -1,27 +1,48 @@
-import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
+
 import Layout from '../../components/Layout/Layout.js';
 
-const ItemShowRoom = props => {
-  const router = useRouter();
+const { HOST } = require('../../config');
+
+const ItemShowRoom = ({ item }) => {
+
+  if (!item) {
+    return (
+      <Layout>
+        Producto no encontrado;
+      </Layout>
+    )
+  }
 
   return (
     <Layout>
-      <h1>{props.item.title}</h1>
-      <p>{router.query.id}</p>
-      <p>${props.item.price}</p>
+      <h1>{item.title}</h1>
+      <p>{item.id}</p>
+      <p>${item.price}</p>
     </Layout>
   )
 };
 
 ItemShowRoom.getInitialProps = async function(context) {
-    const { id } = context.query;
-    const res = await fetch(`/api/items/${id}`);
+  const { id } = context.query;
+
+  try {
+    const res = await fetch(`${HOST}/api/items/${id}`);
+
+    if (res.status === 404) {
+      return {
+        item: null
+      }
+    }
+
     const item = await res.json();
-
-    console.log(`Fetched show: ${item.id}`);
-
+    console.log(`Fetched item details: ${item.id}`);
     return { item };
+
+  } catch(error) {
+    console.log(error);
+    throw new Error("Bad response");
+  }
 };
 
 export default ItemShowRoom;
