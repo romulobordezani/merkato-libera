@@ -17,6 +17,6 @@ export default async function getItemIgniter(context) {
     const item = await res.json();
     return { item };
   } catch (error) {
-    throw new Error('Bad response');
+    throw new Error(error);
   }
 }

@@ -24,6 +24,6 @@ export default async function searchIgniter(context) {
       items: data.map(entry => entry)
     };
   } catch (error) {
-    throw new Error('Bad response');
+    throw new Error(error);
   }
 }
