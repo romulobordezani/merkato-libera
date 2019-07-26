@@ -8,7 +8,7 @@ const ItemShowRoom = props => {
     <Layout>
       <h1>{props.item.title}</h1>
       <p>{router.query.id}</p>
-      <p>Price: ${props.item.price}</p>
+      <p>${props.item.price}</p>
     </Layout>
   )
 };
