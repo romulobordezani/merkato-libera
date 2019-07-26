@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import fetch from 'isomorphic-unfetch';
+import PropTypes from 'prop-types';
 
 import Layout from '../../components/Layout';
 
@@ -23,7 +24,15 @@ const ItemShowRoom = ({ item }) => {
   );
 };
 
-ItemShowRoom.getInitialProps = async function(context) {
+ItemShowRoom.propTypes = {
+  item: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired
+  }).isRequired
+};
+
+ItemShowRoom.getInitialProps = async function getItemIgniter(context) {
   const { id } = context.query;
 
   try {

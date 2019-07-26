@@ -1,11 +1,10 @@
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 
 import Header from '../Header';
 import style from './Layout.scss';
 
-const Layout = props => {
-  const title = props.title || 'Mercado Livre';
-
+const Layout = ({ title, children }) => {
   return (
     <div style={style.mainLayout}>
       <Head>
@@ -13,11 +12,18 @@ const Layout = props => {
         <link rel="stylesheet" href="styles/normalize.min.css" />
       </Head>
       <Header />
-      {props.children}
+      {children}
     </div>
   );
 };
 
-// TODO - Missing some PropTypes Here...
+Layout.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.element.isRequired
+};
+
+Layout.defaultProps = {
+  title: 'Mercado Livre'
+};
 
 export default Layout;

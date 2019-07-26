@@ -1,6 +1,6 @@
-import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
 
@@ -22,7 +22,11 @@ const Item = props => (
   </Layout>
 );
 
-Item.getInitialProps = async function(context) {
+Item.propTypes = {
+  items: PropTypes.array.isRequired
+};
+
+Item.getInitialProps = async function searchIgniter(context) {
   const { q, limit, offset } = context.query;
 
   try {
