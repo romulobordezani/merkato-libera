@@ -1,10 +1,8 @@
-import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
+import { searchIgniter } from '../igniters';
 import Layout from '../components/Layout';
-
-const { HOST } = require('../config');
 
 const Item = props => (
   <Layout>
@@ -26,32 +24,6 @@ Item.propTypes = {
   items: PropTypes.array.isRequired
 };
 
-Item.getInitialProps = async function searchIgniter(context) {
-  const { q, limit, offset } = context.query;
-
-  try {
-    const url = `${HOST}/api/items?q=${q}${limit ? `&limit=${limit}` : ''}${
-      offset ? `&offset=${offset}` : ''
-    }`;
-    const res = await fetch(url);
-
-    if (res.status === 204) {
-      return {
-        items: []
-      };
-    }
-
-    const data = await res.json();
-
-    console.log(`Show data fetched. Count: ${data.length}`);
-
-    return {
-      items: data.map(entry => entry)
-    };
-  } catch (error) {
-    console.log(error);
-    throw new Error('Bad response');
-  }
-};
+Item.getInitialProps = searchIgniter;
 
 export default Item;

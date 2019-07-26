@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router';
-import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 
+import { getItemIgniter } from '../../igniters';
 import Layout from '../../components/Layout';
-
-const { HOST } = require('../../config');
 
 const ItemShowRoom = ({ item }) => {
   const router = useRouter();
@@ -32,25 +30,6 @@ ItemShowRoom.propTypes = {
   }).isRequired
 };
 
-ItemShowRoom.getInitialProps = async function getItemIgniter(context) {
-  const { id } = context.query;
-
-  try {
-    const res = await fetch(`${HOST}/api/items/${id}`);
-
-    if (res.status === 404) {
-      return {
-        item: null
-      };
-    }
-
-    const item = await res.json();
-    console.log(`Fetched item details: ${item.id}`);
-    return { item };
-  } catch (error) {
-    console.log(error);
-    throw new Error('Bad response');
-  }
-};
+ItemShowRoom.getInitialProps = getItemIgniter;
 
 export default ItemShowRoom;
