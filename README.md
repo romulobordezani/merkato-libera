@@ -1,4 +1,7 @@
 # Meli FE test
+
+![Meli](https://blog.egestor.com.br/wp-content/uploads/2017/01/mercado-livre.png | width=100)
+
 This repository contains the Front End Test for Meli, made with a lot of passion and hope to join Meli's team soon.
 
 Webapp available at: [meli-front-end-test.herokuapp.com](https://meli-front-end-test.herokuapp.com/).
