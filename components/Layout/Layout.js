@@ -10,6 +10,7 @@ const Layout = props => {
     <div style={style.mainLayout}>
       <Head>
         <title>{title}</title>
+        <link rel="stylesheet" href="styles/normalize.min.css" />
       </Head>
       <Header />
       {props.children}
