@@ -12,7 +12,7 @@ NextApp.prepare().then(() => {
 
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
-    server.use('/api/items', require('./routes/items'));
+    server.use('/api/items', require('./routes/items.routes'));
 
     // Handles all next + React Stuff not matched by Express routes
     server.get('*', (req, res) => {

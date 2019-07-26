@@ -1,9 +1,10 @@
 import React from "react";
+import {Layout} from "../components/Layout";
 
 const Index = () => (
-    <div>
-        <p>Future Meli search box</p>
-    </div>
+    <Layout>
+        <h1>Mercado Livre Busca</h1>
+    </Layout>
 );
 
 export default Index;

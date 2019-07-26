@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server/index.js",
+    "dev": "nodemon server/index.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server/index.js"
   },
@@ -33,6 +33,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0"
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.1"
   }
 }
