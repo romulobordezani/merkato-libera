@@ -1,5 +1,7 @@
 const fetch = require('isomorphic-unfetch');
-const logger = require('../helpers/logger');
+const { logger } = require('../helpers');
+const Author = require('../models/Author');
+const Item = require('../models/Item');
 
 const CONFIG = require('../../config');
 const { MELI_API, MELI_SITE } = CONFIG();
@@ -21,7 +23,10 @@ async function queryItems(req, res){
 
     logger.debug(`API used to query > ${url}, got ${data.results.length} results.`);
 
-    return res.json(data.results);
+    return res.json({
+      author,
+      items: data.results
+    });
   } catch (error) {
     logger.error(error);
     return res.status(500).json(error);
@@ -42,7 +47,14 @@ async function getItem(req, res) {
     }
 
     logger.debug(`API used to get Item Id: ${id}`);
-    return res.json(data);
+
+    const author = new Author();
+    const item = new Item(data);
+
+    return res.json({
+      author,
+      item
+    });
   } catch (error) {
     logger.error(error);
     return res.status(500).json( error );

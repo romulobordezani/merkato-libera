@@ -4,15 +4,13 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 const { API_URL } = publicRuntimeConfig;
 
-export default async function searchIgniter(context) {
+async function searchIgniter(context) {
   const { q, limit, offset } = context.query;
 
   try {
     const url = `${API_URL}/api/items?q=${q}${limit ? `&limit=${limit}` : ''}${
       offset ? `&offset=${offset}` : ''
     }`;
-
-    console.log('Aqui', url);
 
     const res = await fetch(url);
 
@@ -31,3 +29,5 @@ export default async function searchIgniter(context) {
     throw new Error(error);
   }
 }
+
+export default searchIgniter;

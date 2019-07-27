@@ -4,10 +4,8 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 const { API_URL } = publicRuntimeConfig;
 
-export default async function getItemIgniter(context) {
+async function getItemIgniter(context) {
   const { id } = context.query;
-
-  console.log('Acola', API_URL);
 
   try {
     const res = await fetch(`${API_URL}/api/items/${id}`);
@@ -18,9 +16,11 @@ export default async function getItemIgniter(context) {
       };
     }
 
-    const item = await res.json();
+    const { item } = await res.json();
     return { item };
   } catch (error) {
     throw new Error(error);
   }
 }
+
+export default getItemIgniter;

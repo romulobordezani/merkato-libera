@@ -11,10 +11,10 @@ const ItemShowRoom = ({ item }) => {
     <Layout title={item.title}>
       {item && (
         <div>
-          <img src={item.pictures[0].secure_url} alt={item.title} />
+          <img src={item.picture} alt={item.title} />
           <h1>{item.title}</h1>
           <p>{item.id}</p>
-          <p>${item.price}</p>
+          <p>{item.price.currency}{item.price.amount},{item.price.decimals}</p>
         </div>
       )}
 

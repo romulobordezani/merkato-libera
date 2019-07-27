@@ -1,4 +1,5 @@
 const withSass = require('@zeit/next-sass');
+const CONFIG = require('./config');
 
 module.exports = withSass({
   /* Next config options goes here */
@@ -7,11 +8,5 @@ module.exports = withSass({
     importLoaders: 1,
     localIdentName: '[local]___[hash:base64:5]'
   },
-  publicRuntimeConfig: {
-    MELI_API: 'https://api.mercadolibre.com',
-    MELI_SITE: process.env.MELI_SITE || 'MLB',
-    API_URL: process.env.API_URL,
-    PORT: parseInt(process.env.PORT, 10) || 3000,
-    dev: process.env.NODE_ENV !== 'production'
-  }
+  publicRuntimeConfig: CONFIG()
 });
