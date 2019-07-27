@@ -6,12 +6,15 @@ import Layout from '../components/Layout';
 
 const Item = props => (
   <Layout>
-    <h1>Mercado Livre Items:</h1>
+    <h1>Resultado:</h1>
     <ul>
       {props.items.map(item => (
         <li key={item.id}>
           <Link href="/items/[id]" as={`/items/${item.id}`}>
-            <a>{item.title}</a>
+            <a>
+              <img src={item.thumbnail} alt={item.title} />
+              {item.title}
+            </a>
           </Link>
         </li>
       ))}

@@ -12,11 +12,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <h1>
-        Mercado Livre Busca:
-        {q}{' '}
-      </h1>
-      <input type="text" onChange={event => setQ(event.target.value)} />
+      <input type="text" onChange={event => setQ(event.target.value)} />{' '}
       <button
         type="button"
         onClick={() => {

@@ -11,6 +11,7 @@ const ItemShowRoom = ({ item }) => {
     <Layout title={item.title}>
       {item && (
         <div>
+          <img src={item.pictures[0].secure_url} alt={item.title} />
           <h1>{item.title}</h1>
           <p>{item.id}</p>
           <p>${item.price}</p>
