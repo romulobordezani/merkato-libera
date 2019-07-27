@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node server/index.js",
+    "dev": "API_URL=http://localhost:3000 node server/index.js",
     "dev:server": "nodemon server/index.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production API_URL=https://meli-front-end-test.herokuapp.com node server/index.js",
