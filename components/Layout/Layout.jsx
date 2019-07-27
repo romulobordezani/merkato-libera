@@ -12,7 +12,9 @@ const Layout = ({ title, children }) => {
         <link rel="stylesheet" href="styles/normalize.min.css" />
       </Head>
       <Header />
-      <div className={style['content-wrapper']}>{children}</div>
+      <div className={style['main-layout__content-wrapper']} style={{ display: 'none' }}>
+        {children}
+      </div>
     </div>
   );
 };
