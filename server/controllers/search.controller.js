@@ -34,8 +34,7 @@ async function queryItems(req, res){
     return res.json({
       author,
       categories,
-      items,
-      roughItems: data
+      items
     });
   } catch (error) {
     logger.error(error);
