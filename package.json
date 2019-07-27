@@ -4,7 +4,7 @@
   "description": "Mercado Livre Front-end test ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "cross-env API_URL=http://localhost:3000 node server/index.js",
     "dev:server": "cross-env API_URL=http://localhost:3000 nodemon server/index.js",
     "build": "next build",
@@ -44,14 +44,21 @@
     "winston-daily-rotate-file": "^3.10.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "@babel/core": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "nodemon": "^1.19.1"
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.6"
   }
 }
