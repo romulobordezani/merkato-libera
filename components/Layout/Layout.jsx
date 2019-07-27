@@ -9,7 +9,7 @@ const Layout = ({ title, children }) => {
     <div className={style['main-layout']}>
       <Head>
         <title>{title}</title>
-        <link rel="stylesheet" href="styles/normalize.min.css" />
+        <link rel="preload" href="styles/normalize.min.css" />
       </Head>
       <Header />
       <div className={style['content-wrapper']}>{children}</div>
