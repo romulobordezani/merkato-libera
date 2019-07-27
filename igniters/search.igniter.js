@@ -8,10 +8,11 @@ export default async function searchIgniter(context) {
   const { q, limit, offset } = context.query;
 
   try {
-    console.log('Aqui', API_URL);
     const url = `${API_URL}/api/items?q=${q}${limit ? `&limit=${limit}` : ''}${
       offset ? `&offset=${offset}` : ''
     }`;
+
+    console.log('Aqui', url);
 
     const res = await fetch(url);
 

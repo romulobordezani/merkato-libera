@@ -6,13 +6,13 @@ import style from './Layout.scss';
 
 const Layout = ({ title, children }) => {
   return (
-    <div style={style.mainLayout}>
+    <div className={style['main-layout']}>
       <Head>
         <title>{title}</title>
         <link rel="stylesheet" href="styles/normalize.min.css" />
       </Head>
       <Header />
-      {children}
+      <div className={style['content-wrapper']}>{children}</div>
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import style from './Header.scss';
+import antiBlinkStyle from './HeaderAntiBlink.style';
+import InstantLogo from './InstantLogo';
 
 const Header = () => {
   return (
-    <header className={style.header}>
-      <img src="/static/images/logo-pt__large_plus.png" alt="Mercado Livre" />
+    <header className={style.header} style={antiBlinkStyle}>
+      <InstantLogo />
     </header>
   );
 };

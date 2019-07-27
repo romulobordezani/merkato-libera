@@ -7,6 +7,8 @@ const { API_URL } = publicRuntimeConfig;
 export default async function getItemIgniter(context) {
   const { id } = context.query;
 
+  console.log('Acola', API_URL);
+
   try {
     const res = await fetch(`${API_URL}/api/items/${id}`);
 

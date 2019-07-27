@@ -1,7 +1,8 @@
 const fetch = require('isomorphic-unfetch');
 const logger = require('../helpers/logger');
 
-const { MELI_API, MELI_SITE } = require('../../config');
+const CONFIG = require('../../config');
+const { MELI_API, MELI_SITE } = CONFIG();
 
 async function queryItems(req, res){
   const { q, limit, offset } = req.query;

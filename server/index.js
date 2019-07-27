@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const serveStatic = require('serve-static');
 const path = require('path');
 
-const { PORT, dev } = require('../config');
+const CONFIG = require('../config');
+const { PORT, dev } = CONFIG();
 const NextApp = next({ dev });
 const handle = NextApp.getRequestHandler();
 
