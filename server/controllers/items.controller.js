@@ -5,6 +5,7 @@ const Item = require('../models/Item');
 
 const CONFIG = require('../../config');
 const { MELI_API, MELI_SITE } = CONFIG();
+const author = new Author();
 
 async function queryItems(req, res){
   const { q, limit, offset } = req.query;
@@ -38,6 +39,7 @@ async function getItem(req, res) {
 
   try {
     const url = `${MELI_API}/items/${id}`;
+    // Gets general Info
     const meliAPIres = await fetch(url);
     const data = await meliAPIres.json();
 
@@ -46,10 +48,16 @@ async function getItem(req, res) {
       return res.sendStatus(404).end();
     }
 
+    // Gets Description, only if the product exists
+    const meliAPIresForDescription = await fetch(`${url}/description`);
+    const description = await meliAPIresForDescription.json();
+
     logger.debug(`API used to get Item Id: ${id}`);
 
-    const author = new Author();
     const item = new Item(data);
+
+    // Adds Description to item
+    item.description = description.plain_text;
 
     return res.json({
       author,

@@ -20,11 +20,9 @@ async function searchIgniter(context) {
       };
     }
 
-    const data = await res.json();
+    const { items } = await res.json();
 
-    return {
-      items: data.map(entry => entry)
-    };
+    return { items };
   } catch (error) {
     throw new Error(error);
   }
