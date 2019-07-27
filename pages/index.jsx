@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Router from 'next/router';
 
 import Layout from '../components/Layout';
+import { envIgniter } from '../igniters';
 
 const Index = () => {
   const [q, setQ] = useState('');
@@ -24,5 +25,7 @@ const Index = () => {
     </Layout>
   );
 };
+
+Index.getInitialProps = envIgniter;
 
 export default Index;
