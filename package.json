@@ -8,7 +8,7 @@
     "dev": "node server/index.js",
     "dev:server": "nodemon server/index.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production HOST=https://meli-front-end-test.herokuapp.com node server/index.js",
+    "start": "cross-env NODE_ENV=production API_URL=https://meli-front-end-test.herokuapp.com node server/index.js",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "lint:fix": "eslint \"**/*.{js,jsx}\" --fix",
     "heroku-postbuild": "npm run build"

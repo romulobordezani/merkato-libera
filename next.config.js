@@ -1,5 +1,5 @@
 const withSass = require('@zeit/next-sass');
-const { API_URL } = require('./config');
+const CONFIG = require('./config');
 
 module.exports = withSass({
   /* Next config options goes here */
@@ -8,7 +8,5 @@ module.exports = withSass({
     importLoaders: 1,
     localIdentName: '[local]___[hash:base64:5]'
   },
-  publicRuntimeConfig: {
-    API_URL
-  }
+  publicRuntimeConfig: CONFIG
 });
