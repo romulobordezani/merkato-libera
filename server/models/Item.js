@@ -9,7 +9,7 @@ class Item {
       amount: Math.trunc(item.price),
       decimals: getDecimals(item.price)
     };
-    this.picture = item.pictures[0].secure_url;
+    this.picture = item.thumbnail || item.pictures[0].secure_url;
     this.condition = item.condition;
     this.free_shipping = item.shipping.free_shipping;
     this.sold_quantity = item.sold_quantity;

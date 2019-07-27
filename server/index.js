@@ -14,7 +14,7 @@ NextApp.prepare().then(() => {
 
   server.use(bodyParser.json());
   server.use(bodyParser.urlencoded({ extended: true }));
-  server.use('/api/items', require('./routes/items.routes'));
+  server.use('/api/items', require('./routes'));
   server.use(serveStatic(path.resolve('./static')));
 
   // Handles all next + React Stuff not matched by Express routes
