@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "API_URL=http://localhost:3000 node server/index.js",
-    "dev:server": "nodemon server/index.js",
+    "dev": "cross-env API_URL=http://localhost:3000 node server/index.js",
+    "dev:server": "cross-env API_URL=http://localhost:3000 nodemon server/index.js",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production API_URL=https://meli-front-end-test.herokuapp.com node server/index.js",
+    "start": "cross-env NODE_ENV=production node server/index.js",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "lint:fix": "eslint \"**/*.{js,jsx}\" --fix",
     "heroku-postbuild": "npm run build"
