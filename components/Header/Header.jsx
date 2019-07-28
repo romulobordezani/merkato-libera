@@ -1,4 +1,6 @@
-import grid from '../Grid/Grid.scss';
+import React from 'react';
+import styles from './Header.scss';
+
 import antiBlinkStyle from './HeaderAntiBlink.style';
 
 import InstantLogo from './InstantLogo';
@@ -6,12 +8,14 @@ import SearchBox from '../SearchBox';
 
 const Header = () => {
   return (
-    <header className={`${grid.mainGrid}`} style={antiBlinkStyle}>
-      <div className={`${grid.contentBox}`}>
-        <InstantLogo />
+    <div className={`${styles.header}`} style={antiBlinkStyle}>
+      <div className={`${styles.header__logo}`}>
+        <InstantLogo  />
+      </div>
+      <div className={`${styles['header__search-box']}`}>
         <SearchBox />
       </div>
-    </header>
+    </div>
   );
 };
 

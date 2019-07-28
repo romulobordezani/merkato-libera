@@ -1,0 +1,14 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". logo searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox .";
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__search-box {
+    grid-area: searchBox;
+  }
+}

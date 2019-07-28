@@ -1,8 +1,8 @@
 .mainGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
+  grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
 }
 
 .contentBox {

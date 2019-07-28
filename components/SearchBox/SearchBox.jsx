@@ -1,24 +1,26 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Router from 'next/router';
+import styles from './SearchBox.scss';
 
 const SearchBox = () => {
   const [q, setQ] = useState('');
 
-  const submitQuery = () => {
+  const submitQuery = e => {
+    e.preventDefault();
     Router.push(`/items?q=${q}&limit=4`);
   };
 
   return (
-    <div>
-      <input type="text" onChange={event => setQ(event.target.value)} />{' '}
-      <button
-        type="button"
-        onClick={() => {
-          submitQuery();
-        }}
-      >
-        Buscar
-      </button>
+    <div className={styles['search-box']} onSubmit={submitQuery}>
+      <form autoComplete="on">
+        <input
+          className={styles['search-box__field']}
+          type="text"
+          onChange={event => setQ(event.target.value)}
+          placeholder="Nunca dejes de buscar"
+        />
+        <button className={styles['search-box__submit-button']} type="submit" />
+      </form>
     </div>
   );
 };
