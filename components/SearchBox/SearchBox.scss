@@ -1,29 +1,32 @@
+@import "../_SassLib/colors";
+
 .search-box {
   width: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
 
-  &__field {
-    background: white;
-    width: 100%;
-    padding: 7px 60px 9px 15px;
-    border: 0 rgba(0,0,0,.2);
+  &_field {
+    width: 94%;
+    padding: 8px 60px 8px 15px;
     outline: 0;
+    background-color: $paper-white;
+    border: none;
+    font-size: 18px;
   }
 
-  &__submit-button {
+  &_submit-button {
     position: absolute;
     right: 0;
     top: 0;
     background-image: url(/images/search_icon.svg);
-    background-color: #EEEEEE;
+    background-color: $light-grey;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 5px;
     background-size: 25px;
     border: none;
     cursor: pointer;
-    height: 35px;
+    height: 40px;
     padding-left: 27px;
     vertical-align: middle;
     font-size: 18px;

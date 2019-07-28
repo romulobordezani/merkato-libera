@@ -1,9 +1,8 @@
 export default {
-  background: '#FFE600',
-  position: 'fixed',
+  background: 'var(--meli-yellow)',
+  position: 'sticky',
   width: '100%',
-  height: '35px',
-  padding: '10px',
+  height: '56px',
   top: 0,
   left: 0
 };

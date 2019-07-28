@@ -17,12 +17,12 @@ const SearchBox = () => {
     <div className={styles['search-box']} onSubmit={submitQuery}>
       <form autoComplete="on">
         <input
-          className={styles['search-box__field']}
+          className={styles['search-box_field']}
           type="text"
           onChange={event => setQ(event.target.value)}
           placeholder="Nunca dejes de buscar"
         />
-        <button className={styles['search-box__submit-button']} type="submit" />
+        <button className={styles['search-box_submit-button']} type="submit" />
       </form>
     </div>
   );

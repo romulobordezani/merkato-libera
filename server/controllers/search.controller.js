@@ -22,11 +22,25 @@ async function queryItems(req, res){
       return res.sendStatus(204).end();
     }
 
+    async function addsBetterPicture() {
+      const promises = items.map(async item => {
+        const url = `${MELI_API}/items/${item.id}`;
+        const meliAPIres = await fetch(url);
+        const data = await meliAPIres.json();
+        item.picture = data.pictures[0].secure_url;
+      });
+
+      await Promise.all(promises);
+    }
+
     const items = data.results.map(item => {
       const model = new Item(item);
+      model.city = item.seller_address.city.name;
       delete model.sold_quantity;
       return model;
     });
+
+    await addsBetterPicture();
 
     // TODO - Categories - Tough one...
     const categories = data.filters; //data.filters[0].values[0].path_from_root;

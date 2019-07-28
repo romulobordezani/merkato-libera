@@ -1,23 +1,21 @@
 .header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox .";
+  background-repeat: no-repeat;
 
-  &__grid_wrapper {
-    grid-area: searchBox;
-    margin: 0 2%;
-    display: flex;
+  &_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1%;
+    grid-template-areas: ". searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox .";
+    padding: 0 2%;
+    height: 100%;
+    align-items: center;
 
-    &__logo {
-      width: 60px;
-      margin-right: 20px;
+    &_wrapper {
+      grid-area: searchBox;
+      display: flex;
+      align-items: center;
     }
-
-    &__search-box {
-      width: 100%;
-      margin-right: 10px;
-    }
-
   }
 }
+

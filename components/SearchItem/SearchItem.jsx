@@ -2,27 +2,31 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import styles from './SearchItem.scss';
+import { getItemIgniter } from '../../igniters';
 
 const SearchItem = ({ item }) => {
   return (
     <Link href="/items/[id]" as={`/items/${item.id}`}>
       <div className={styles.SearchItem}>
-
-        <div className={styles.SearchItem__col_1}>
-          <img src={item.picture} alt={item.title} />
+        <div className={styles.SearchItem_col_1}>
+          <div className={styles.SearchItem_picture}>
+            <img src={item.picture} alt={item.title} />
+          </div>
         </div>
 
-        <div className={styles.SearchItem__col_2}>
-          <div>
-            {item.price.currency}{' '}
+        <div className={styles.SearchItem_col_2}>
+          <div className={styles.SearchItem_price}>
+            <span className={styles.SearchItem_price_currency}>{item.price.currency} </span>
             {item.price.amount}
             {item.price.decimals !== '' && ','}
             {item.price.decimals}
           </div>
-          <div>{item.title}</div>
+          <div className={styles.SearchItem_title}>{item.title}</div>
         </div>
 
-        <div className={styles.SearchItem__col_3}>City</div>
+        <div className={styles.SearchItem_col_3}>
+          <div className={styles.SearchItem_city}>{item.city}</div>
+        </div>
       </div>
     </Link>
   );
@@ -39,8 +43,11 @@ SearchItem.propTypes = {
     }).isRequired,
     free_shipping: PropTypes.bool.isRequired,
     picture: PropTypes.string.isRequired,
-    condition: PropTypes.string.isRequired
+    condition: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired
   }).isRequired
 };
+
+SearchItem.getInitialProps = getItemIgniter;
 
 export default SearchItem;

@@ -1,10 +1,11 @@
+import React, { Fragment } from 'react';
 import Layout from '../components/Layout';
 import { envIgniter } from '../igniters';
 
 const Index = () => {
   return (
     <Layout>
-      <div>Oi</div>
+      <Fragment />
     </Layout>
   );
 };

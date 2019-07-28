@@ -1,3 +1,5 @@
+@import "../colors";
+
 .mainGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -10,12 +12,8 @@
 
 .contentBox {
   grid-area: contentBox;
-  background-color: white;
-  margin-top: 90px;
+  background-color: $paper-white;
   border-radius: 4px;
-}
-
-.displayOnlyWhenLoaded {
-  display: block !important;
+  margin-bottom: 100px;
 }
 

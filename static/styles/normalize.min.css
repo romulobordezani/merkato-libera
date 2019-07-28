@@ -39,10 +39,15 @@ html {
 }
 body {
   font-family: "Proxima Nova",-apple-system,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
   background-color: #EEEEEE;
   height: 100%;
 }
 
 body > div#__next {
   height: 100%;
+}
+
+.display-only-when-normalized {
+  display: block !important;
 }

@@ -1,3 +1,5 @@
+@import "../_SassLib/colors";
+
 .SearchItem {
   display: flex;
   flex-direction: row;
@@ -6,22 +8,71 @@
   align-items: start;
   justify-items: center;
   cursor: pointer;
-  margin: 20px;
-  border-bottom: 1px solid #d6d6d6;
+  padding: 16px;
+  border-bottom: 1px solid $light-grey;
+  -webkit-transition: background-color 0.3s; /* Safari prior 6.1 */
+  transition: background-color 0.3s;
+  transition-timing-function: ease-in-out;
 
-  &__col_1 {
-    flex: 10;
+  &:hover {
+    background-color: lighten( $light-grey, 4% );
   }
 
-  &__col_2 {
-    flex: 80;
+  &:last-child {
+    border-bottom: none;
   }
 
-  &__col_3 {
-    flex: 10;
+  &_col {
+
+    &_1 {
+      flex: 10;
+    }
+
+    &_2 {
+      flex: 80;
+    }
+
+    &_3 {
+      flex: 10;
+    }
   }
 
-  img {
+  &_picture {
     width: 180px;
+    height: 180px;
+    outline: none;
+    margin: 0 16px;
+    align-items: center;
+    display: flex;
+    background-color: $paper-white;
+
+    img {
+      width: 180px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px !important;
+    }
   }
+
+  &_price {
+    font-size: 24px;
+    padding: 16px 0;
+
+    &_currency {
+      font-weight: 300;
+    }
+  }
+
+  &_title {
+    font-weight: 100;
+    font-size: 18px;
+  }
+
+  &_city {
+    padding: 16px 0;
+    font-size: 12px;
+    color: $grey;
+  }
+
+
 }
