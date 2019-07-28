@@ -5,7 +5,9 @@ import InstantLogo from './InstantLogo';
 const Header = () => {
   return (
     <header className={style.header} style={antiBlinkStyle}>
-      <InstantLogo />
+      <div className={style.SearchBox}>
+        <InstantLogo />
+      </div>
     </header>
   );
 };
