@@ -1,0 +1,27 @@
+.SearchItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: start;
+  justify-items: center;
+  cursor: pointer;
+  margin: 20px;
+  border-bottom: 1px solid #d6d6d6;
+
+  &__col_1 {
+    flex: 10;
+  }
+
+  &__col_2 {
+    flex: 80;
+  }
+
+  &__col_3 {
+    flex: 10;
+  }
+
+  img {
+    width: 180px;
+  }
+}

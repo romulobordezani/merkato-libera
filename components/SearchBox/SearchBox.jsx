@@ -7,7 +7,10 @@ const SearchBox = () => {
 
   const submitQuery = e => {
     e.preventDefault();
-    Router.push(`/items?q=${q}&limit=4`);
+    // TODO - Put some decent error feed back here
+    if (q !== ``) {
+      Router.push(`/items?q=${q}&limit=4`);
+    }
   };
 
   return (

@@ -1,24 +1,14 @@
-import Link from 'next/link';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import { searchIgniter } from '../igniters';
 import Layout from '../components/Layout';
+import SearchItem from '../components/SearchItem';
 
 const Item = props => (
   <Layout>
-    <h1>Resultado:</h1>
-    <ul>
-      {props.items.map(item => (
-        <li key={item.id}>
-          <Link href="/items/[id]" as={`/items/${item.id}`}>
-            <a>
-              <img src={item.thumbnail} alt={item.title} />
-              {item.title}
-            </a>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    {props.items.map(item => (
+      <SearchItem item={item} key={item.id} />
+    ))}
     {props.items.length === 0 && <div>Ningún resultado para la busqueda.</div>}
   </Layout>
 );

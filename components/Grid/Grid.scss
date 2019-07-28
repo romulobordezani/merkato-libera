@@ -2,13 +2,20 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  grid-gap: 1%;
   grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
+  margin: 0 2%;
+  height: 100%;
 }
 
 .contentBox {
   grid-area: contentBox;
+  background-color: white;
+  margin-top: 90px;
+  border-radius: 4px;
 }
 
 .displayOnlyWhenLoaded {
   display: block !important;
 }
+

@@ -9,11 +9,13 @@ import SearchBox from '../SearchBox';
 const Header = () => {
   return (
     <div className={`${styles.header}`} style={antiBlinkStyle}>
-      <div className={`${styles.header__logo}`}>
-        <InstantLogo  />
-      </div>
-      <div className={`${styles['header__search-box']}`}>
-        <SearchBox />
+      <div className={`${styles.header__grid_wrapper}`}>
+        <div className={`${styles.header__grid_wrapper__logo}`}>
+          <InstantLogo />
+        </div>
+        <div className={`${styles['header__grid_wrapper__search-box']}`}>
+          <SearchBox />
+        </div>
       </div>
     </div>
   );

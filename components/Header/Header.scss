@@ -2,13 +2,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: ". logo searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox .";
+  grid-template-areas: ". searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox .";
 
-  &__logo {
-    grid-area: logo;
-  }
-
-  &__search-box {
+  &__grid_wrapper {
     grid-area: searchBox;
+    margin: 0 2%;
+    display: flex;
+
+    &__logo {
+      width: 60px;
+      margin-right: 20px;
+    }
+
+    &__search-box {
+      width: 100%;
+      margin-right: 10px;
+    }
+
   }
 }
