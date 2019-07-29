@@ -10,18 +10,14 @@
     justify-content: center;
 
     img {
-      width: 680px;
+      width: 100%;
       height: auto;
-      max-height: 680px;
       object-fit: contain;
       border-radius: 4px !important;
 
-      @include breakpoint($small) {
-        width: 100%;
-      }
-
-      @include breakpoint($medium) {
-        width: 100%;
+      @include breakpoint($large) {
+        width: 680px;
+        max-height: 680px;
       }
 
     }
@@ -45,14 +41,7 @@
       font-weight: 500;
     }
 
-    &_price {
-      font-size: 46px;
-      padding: 32px 0;
 
-      &_currency {
-        font-weight: 300;
-      }
-    }
 
     &_buyButton {
       display: inline-block;

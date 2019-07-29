@@ -1,0 +1,27 @@
+@import "../_SassLib/breakpoints";
+
+.price {
+  font-size: 46px;
+  padding: 32px 0;
+  font-weight: 200;
+  display: inline-block;
+
+  @include breakpoint($small) {
+    padding: 6px 0;
+  }
+
+  &_currency {
+    margin-right: 12px;
+  }
+
+  &_amount {
+
+  }
+
+  &_decimals {
+    font-weight: 100;
+    font-size: 0.5em;
+    vertical-align: super;
+    margin-left: 3px;
+  }
+}

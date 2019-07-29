@@ -15,7 +15,8 @@ $ultra-hd: min-width 2400px; /* Ultra wide and 4k, 8k */
 
 $tiny: 320px; /* tiny screens like iPhone 4, Galaxy S and others old smart phones... */
 $iPhone6: 375px; /* iPhone 6 only - width 375px  */
+$small-xl: 823px;
 $small-portrait: (max-width 480px) (orientation portrait); /* Anything smaller than an iPad on portrait */
-$small-landscape: (max-width $medium - $viewportIncrement) (orientation landscape); /* Anything smaller than an iPad? */
+$small-landscape: (max-width $small-xl) (orientation landscape);
 $small: $small-portrait, $small-landscape; /* Anything smaller than an iPad, doesnt matter orientation */
 $small-key-on: (max-width $medium)(max-height 479px); /* Anything small with keyboard opened */

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import React, { Fragment} from 'react';
-import styles from './ItemDetails.scss';
+import React, { Fragment } from 'react';
 
+import styles from './ItemDetails.scss';
+import Price from '../Price';
 
 const ItemDetails = ({ item }) => {
   return (
@@ -16,13 +17,8 @@ const ItemDetails = ({ item }) => {
         </div>
         <div className={styles.ItemDetails_infoBox_title}>{item.title}</div>
         {item.free_shipping && <p>Frete: Gratis.</p>}
-        <div className={styles.ItemDetails_infoBox_price}>
-          {item.price.currency}
-          {item.price.amount.toLocaleString('de-DE')}
-          {item.price.decimals !== '' && ','}
-          {item.price.decimals}
-        </div>
-        <a href className={styles.ItemDetails_infoBox_buyButton}>Comprar</a>
+        <Price item={item} fontSize="46px" />
+        <a href={item.permalink} className={styles.ItemDetails_infoBox_buyButton}>Comprar</a>
       </div>
 
       <div className={styles.ItemDetails_descriptionBox}>
@@ -34,20 +30,7 @@ const ItemDetails = ({ item }) => {
 };
 
 ItemDetails.propTypes = {
-  item: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    price: PropTypes.shape({
-      currency: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
-      decimals: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
-    }).isRequired,
-    free_shipping: PropTypes.bool.isRequired,
-    picture: PropTypes.string.isRequired,
-    condition: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    sold_quantity: PropTypes.number.isRequired
-  }).isRequired
+  item: PropTypes.object.isRequired
 };
 
 export default ItemDetails;

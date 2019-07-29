@@ -14,6 +14,7 @@ class Item {
     this.condition = item.condition;
     this.free_shipping = item.shipping.free_shipping;
     this.sold_quantity = item.sold_quantity;
+    this.permalink = item.permalink;
   }
 }
 

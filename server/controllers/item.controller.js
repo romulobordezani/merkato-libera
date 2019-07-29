@@ -34,7 +34,8 @@ async function getItem(req, res) {
 
     return res.json({
       author,
-      item
+      item,
+      data
     });
   } catch (error) {
     logger.error(error);

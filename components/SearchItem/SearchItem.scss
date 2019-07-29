@@ -2,22 +2,29 @@
 @import "../_SassLib/breakpoints";
 
 .SearchItem {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: start;
-  justify-items: center;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 1%;
+
+  grid-template-areas:
+    "imagBox imagBox infoBox infoBox infoBox infoBox infoBox infoBox cityBox cityBox";
+
   cursor: pointer;
-  padding: 16px;
   border-bottom: 1px solid $light-grey;
-  -webkit-transition: background-color 0.3s; /* Safari prior 6.1 */
+  -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
 
-  @include breakpoint($small) {
-    align-items: center;
-    flex-wrap: wrap;
+  @include breakpoint($small-portrait) {
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "imagBox imagBox imagBox imagBox imagBox imagBox imagBox imagBox imagBox imagBox"
+      "infoBox infoBox infoBox infoBox infoBox infoBox infoBox infoBox infoBox infoBox"
+      "cityBox cityBox cityBox cityBox cityBox cityBox cityBox cityBox cityBox cityBox";
+    justify-items: start;
   }
 
   &:hover {
@@ -28,67 +35,47 @@
     border-bottom: none;
   }
 
-  &_col {
-
-    &_1 {
-      flex: 0 0 auto;
-    }
-
-    &_2 {
-      flex: 7 1 auto;
-    }
-
-    &_3 {
-      flex: 2 1 auto;
-    }
-  }
-
   &_picture {
-    max-width: 180px;
-    max-height: 180px;
-    min-height: 180px;
+    grid-area: imagBox;
+    width: 100%;
+    margin: 16px;
     outline: none;
-    margin: 0 16px;
     align-items: center;
-    display: flex;
-    background-color: $paper-white;
 
-    img {
+    @include breakpoint($large) {
       width: 180px;
       height: auto;
+      min-height: 180px;
+      margin: 16px 0 16px 16px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
       max-height: 180px;
-      object-fit: contain;
+      object-fit: scale-down;
       border-radius: 4px !important;
-
-      @include breakpoint($small) {
-        width: 100%;
-      }
-
     }
   }
 
-  &_price {
-    font-size: 24px;
-    padding: 16px 0;
+  &_info {
+    grid-area: infoBox;
+    margin: 0 16px 0 0;
 
-    &_currency {
-      font-weight: 300;
+    &_title {
+      font-weight: 100;
+      font-size: 18px;
+      word-break: break-word;
     }
-  }
-
-  &_freeShipping {
-    outline: none;
-    margin-left: 6px;
-  }
-
-  &_title {
-    font-weight: 100;
-    font-size: 18px;
   }
 
   &_city {
-    padding: 16px 0;
+    grid-area: cityBox;
+    padding: 32px 0;
     font-size: 12px;
     color: $grey;
+    @include breakpoint($small) {
+      margin: 0 16px;
+    }
   }
 }
