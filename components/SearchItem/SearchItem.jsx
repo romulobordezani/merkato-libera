@@ -17,9 +17,14 @@ const SearchItem = ({ item }) => {
         <div className={styles.SearchItem_col_2}>
           <div className={styles.SearchItem_price}>
             <span className={styles.SearchItem_price_currency}>{item.price.currency} </span>
-            {item.price.amount}
+            {item.price.amount.toLocaleString('de-DE')}
             {item.price.decimals !== '' && ','}
             {item.price.decimals}
+            {item.freeShipping && (
+              <span className={styles.SearchItem_freeShipping}>
+                <img src="/images/ic_shipping.png" alt="Free Shipping" />
+              </span>
+            )}
           </div>
           <div className={styles.SearchItem_title}>{item.title}</div>
         </div>
@@ -44,7 +49,8 @@ SearchItem.propTypes = {
     free_shipping: PropTypes.bool.isRequired,
     picture: PropTypes.string.isRequired,
     condition: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired
+    city: PropTypes.string.isRequired,
+    freeShipping: PropTypes.string.isRequired
   }).isRequired
 };
 

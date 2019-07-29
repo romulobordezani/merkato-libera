@@ -36,6 +36,7 @@ async function queryItems(req, res){
     const items = data.results.map(item => {
       const model = new Item(item);
       model.city = item.seller_address.city.name;
+      model.freeShipping = item.shipping.free_shipping;
       delete model.sold_quantity;
       return model;
     });
@@ -48,7 +49,8 @@ async function queryItems(req, res){
     return res.json({
       author,
       categories,
-      items
+      items,
+      data
     });
   } catch (error) {
     logger.error(error);

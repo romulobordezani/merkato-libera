@@ -1,19 +1,42 @@
 @import "../colors";
 
-.mainGrid {
+._12-columns-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 1%;
-  grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
+
   margin: 0 2%;
   height: 100%;
 }
 
-.contentBox {
-  grid-area: contentBox;
-  background-color: $paper-white;
-  border-radius: 4px;
-  margin-bottom: 100px;
+.mainGrid {
+  @extend ._12-columns-grid;
+  grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
+
+  &_contentBox {
+    grid-area: contentBox;
+    background-color: $paper-white;
+    border-radius: 4px;
+    margin-bottom: 100px;
+  }
 }
 
+.detailsGrid {
+  @extend ._12-columns-grid;
+  grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
+
+  &_contentBox {
+    grid-area: contentBox;
+    background-color: $paper-white;
+    border-radius: 4px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 500px 1fr;
+    grid-gap: 1%;
+    grid-template-areas: "imgBox imgBox imgBox imgBox imgBox imgBox imgBox infoBox infoBox infoBox" "descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox";
+  }
+
+}

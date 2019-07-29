@@ -38,8 +38,9 @@
   }
 
   &_picture {
-    width: 180px;
-    height: 180px;
+    max-width: 180px;
+    max-height: 180px;
+    min-height: 180px;
     outline: none;
     margin: 0 16px;
     align-items: center;
@@ -49,7 +50,8 @@
     img {
       width: 180px;
       height: auto;
-      object-fit: cover;
+      max-height: 180px;
+      object-fit: contain;
       border-radius: 4px !important;
     }
   }
@@ -63,6 +65,11 @@
     }
   }
 
+  &_freeShipping {
+    outline: none;
+    margin-left: 6px;
+  }
+
   &_title {
     font-weight: 100;
     font-size: 18px;
@@ -73,6 +80,4 @@
     font-size: 12px;
     color: $grey;
   }
-
-
 }

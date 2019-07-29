@@ -6,7 +6,7 @@ class Item {
     this.id = item.id;
     this.title = item.title;
     this.price = {
-      currency: item.currency_id,
+      currency: item.currency_id === 'ARS' ? '$' : item.currency_id,
       amount: Math.trunc(item.price),
       decimals: getDecimals(item.price)
     };

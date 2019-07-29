@@ -2,10 +2,10 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 
 import Header from '../Header';
-import grid from '../_SassLib/Grid/Grid.scss';
+import gridSystem from '../_SassLib/Grid/Grid.scss';
 import CategoriesBreadcrumb from '../CategoriesBreadcrumb';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ title, children, grid }) => {
   return (
     <div className="display-only-when-normalized" style={{ display: 'none' }}>
       <Head>
@@ -14,8 +14,8 @@ const Layout = ({ title, children }) => {
       </Head>
       <Header />
       <CategoriesBreadcrumb />
-      <div className={`${grid.mainGrid}`}>
-        <div className={`${grid.contentBox}`}>{children}</div>
+      <div className={`${gridSystem[`${grid}Grid`]}`}>
+        <div className={`${gridSystem[`${grid}Grid_contentBox`]}`}>{children}</div>
       </div>
     </div>
   );
@@ -23,11 +23,13 @@ const Layout = ({ title, children }) => {
 
 Layout.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  grid: PropTypes.string
 };
 
 Layout.defaultProps = {
-  title: 'Mercado Livre'
+  title: 'Mercado Livre',
+  grid: 'main'
 };
 
 export default Layout;
