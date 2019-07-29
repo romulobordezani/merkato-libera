@@ -8,7 +8,7 @@ const Price = ({ fontSize, item }) => {
   return (
     <span className={styles.price} style={{ fontSize }}>
       <span className={styles.price_currency}>{price.currency}</span>
-      <span className={styles.price_amount}>{price.amount.toLocaleString('de-DE')}</span>
+      <span className={styles.price_amount}>{price.amount}</span>
       <span className={styles.price_decimals}>{price.decimals}</span>
     </span>
   );

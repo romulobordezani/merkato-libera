@@ -1,4 +1,4 @@
-const { getDecimals } = require('../helpers');
+const { getDecimals, toMoney } = require('../helpers');
 
 class Item {
   constructor(item) {
@@ -7,7 +7,7 @@ class Item {
     this.title = item.title;
     this.price = {
       currency: item.currency_id === 'ARS' ? '$' : item.currency_id,
-      amount: Math.trunc(item.price),
+      amount: toMoney(item.price),
       decimals: getDecimals(item.price)
     };
     this.picture = pictureUrl;
