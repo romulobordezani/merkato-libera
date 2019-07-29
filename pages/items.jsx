@@ -5,7 +5,7 @@ import SearchItem from '../components/SearchItem';
 import gridSystem from '../components/_SassLib/Grid/Grid.scss';
 
 const Item = props => (
-  <div className={`${gridSystem.mainsGrid}`}>
+  <div className={`${gridSystem.mainGrid}`}>
     <div className={`${gridSystem.mainGrid_contentBox}`}>
       {props.items.map(item => (
         <SearchItem item={item} key={item.id} />

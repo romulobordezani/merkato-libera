@@ -5,12 +5,15 @@ import React from 'react';
 import Header from '../Header';
 import CategoriesBreadcrumb from '../CategoriesBreadcrumb';
 
-const Layout = ({ title, children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="display-only-when-normalized" style={{ display: 'none' }}>
       <Head>
-        <title>{title}</title>
+        <title>Mercado Libre</title>
         <link rel="stylesheet" href="/styles/normalize.min.css" />
+        {/* <!-- important to kee this meta noindex to avoid indexing of this test --> */}
+        <meta name="robots" content="noindex" />
+        <meta name="theme-color" content="#FFE600" />
       </Head>
       <Header />
       <CategoriesBreadcrumb />
