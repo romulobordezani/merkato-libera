@@ -1,6 +1,7 @@
 @import "../colors";
+@import "../breakpoints";
 
-._12-columns-grid {
+@mixin _12-columns-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
@@ -8,10 +9,21 @@
 
   margin: 0 2%;
   height: 100%;
+
+  $mobilePadding: 0.2%;
+
+  @include breakpoint($small) {
+    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
+  }
+
+  @include breakpoint($small-landscape) {
+    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
+  }
+
 }
 
 .mainGrid {
-  @extend ._12-columns-grid;
+  @include _12-columns-grid;
   grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
 
   &_contentBox {
@@ -23,7 +35,7 @@
 }
 
 .detailsGrid {
-  @extend ._12-columns-grid;
+  @include _12-columns-grid;
   grid-template-areas: ". contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox contentBox .";
 
   &_contentBox {
@@ -36,7 +48,27 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 500px 1fr;
     grid-gap: 1%;
-    grid-template-areas: "imgBox imgBox imgBox imgBox imgBox imgBox imgBox infoBox infoBox infoBox" "descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox descriptionBox";
+    grid-template-areas:
+      "imagBox imagBox imagBox imagBox imagBox imagBox imagBox infoBox infoBox infoBox"
+      "descBox descBox descBox descBox descBox descBox descBox descBox descBox descBox";
+
+    @mixin detailsGridSmallDevices {
+      grid-template-columns: 5% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5%;
+      grid-template-rows: auto auto auto;
+      align-items: start;
+      grid-template-areas:
+        ". imagBox imagBox imagBox imagBox imagBox imagBox imagBox imagBox ."
+        ". infoBox infoBox infoBox infoBox infoBox infoBox infoBox infoBox ."
+        ". descBox descBox descBox descBox descBox descBox descBox descBox .";
+    }
+
+    @include breakpoint($small) {
+      @include detailsGridSmallDevices;
+    }
+
+    @include breakpoint($small-landscape) {
+      @include detailsGridSmallDevices;
+    }
   }
 
 }

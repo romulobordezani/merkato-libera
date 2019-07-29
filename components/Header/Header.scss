@@ -1,3 +1,5 @@
+@import "../_SassLib/breakpoints";
+
 .header {
   background-repeat: no-repeat;
 
@@ -10,6 +12,10 @@
     padding: 0 2%;
     height: 100%;
     align-items: center;
+
+    @include breakpoint($small) {
+      grid-template-areas: "searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox searchBox";
+    }
 
     &_wrapper {
       grid-area: searchBox;

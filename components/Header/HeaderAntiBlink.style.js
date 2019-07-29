@@ -1,5 +1,5 @@
 export default {
-  background: 'var(--meli-yellow)',
+  background: '#FFE600',
   position: 'sticky',
   width: '100%',
   height: '56px',

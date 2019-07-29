@@ -1,8 +1,10 @@
+@import "../_SassLib/breakpoints";
+
 .ItemDetails {
 
   &_imgBox {
     padding-top: 32px;
-    grid-area: imgBox;
+    grid-area: imagBox;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -13,12 +15,25 @@
       max-height: 680px;
       object-fit: contain;
       border-radius: 4px !important;
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+
+      @include breakpoint($medium) {
+        width: 100%;
+      }
+
     }
   }
 
   &_infoBox {
     grid-area: infoBox;
     padding: 32px 32px 0 0;
+
+    @include breakpoint($small) {
+      padding: 0;
+    }
 
     &_info {
       font-size: 14px;
@@ -66,8 +81,12 @@
   }
 
   &_descriptionBox {
-    grid-area: descriptionBox;
+    grid-area: descBox;
     padding: 0 32px 32px 32px;
+
+    @include breakpoint($small) {
+      padding: 0;
+    }
 
     &_title {
       font-size: 28px;

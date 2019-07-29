@@ -29,9 +29,10 @@
   },
   "homepage": "https://github.com/romulobordezani/merkato-libera#readme",
   "dependencies": {
-    "cross-env": "^5.2.0",
     "@zeit/next-sass": "^1.0.1",
     "body-parser": "^1.19.0",
+    "breakpoint-sass": "^2.7.1",
+    "cross-env": "^5.2.0",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",

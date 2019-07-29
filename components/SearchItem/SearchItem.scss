@@ -1,4 +1,5 @@
 @import "../_SassLib/colors";
+@import "../_SassLib/breakpoints";
 
 .SearchItem {
   display: flex;
@@ -14,6 +15,11 @@
   transition: background-color 0.3s;
   transition-timing-function: ease-in-out;
 
+  @include breakpoint($small) {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   &:hover {
     background-color: lighten( $light-grey, 4% );
   }
@@ -25,15 +31,15 @@
   &_col {
 
     &_1 {
-      flex: 10;
+      flex: 0 0 auto;
     }
 
     &_2 {
-      flex: 80;
+      flex: 7 1 auto;
     }
 
     &_3 {
-      flex: 10;
+      flex: 2 1 auto;
     }
   }
 
@@ -53,6 +59,11 @@
       max-height: 180px;
       object-fit: contain;
       border-radius: 4px !important;
+
+      @include breakpoint($small) {
+        width: 100%;
+      }
+
     }
   }
 
