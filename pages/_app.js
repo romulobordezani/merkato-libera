@@ -1,4 +1,5 @@
 import App from 'next/app';
+import style from '../components/_SassLib/_colors.scss';
 
 class MeliApp extends App {
   componentDidCatch(error, errorInfo) {

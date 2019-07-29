@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Router from 'next/router';
 import styles from './SearchBox.scss';
 
 const SearchBox = () => {
@@ -8,7 +9,7 @@ const SearchBox = () => {
     e.preventDefault();
     // TODO - Put some decent error feed back here
     if (q !== ``) {
-      window.location.replace(`/items?q=${q}&limit=4`);
+      Router.push(`/items?q=${q}&limit=4`);
     }
   };
 
