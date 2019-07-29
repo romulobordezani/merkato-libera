@@ -10,6 +10,7 @@ const SearchBox = () => {
     console.log(q, 'clicked');
     // TODO - Put some decent error feed back here
     if (q !== ``) {
+      console.log(q, 'redirecting to', `/items?q=${q}&limit=4`);
       Router.push(`/items?q=${q}&limit=4`);
     }
   };
