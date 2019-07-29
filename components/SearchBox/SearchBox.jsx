@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Router from 'next/router';
 import styles from './SearchBox.scss';
 
 const SearchBox = () => {
@@ -7,11 +6,9 @@ const SearchBox = () => {
 
   const submitQuery = e => {
     e.preventDefault();
-    console.log(q, 'clicked');
     // TODO - Put some decent error feed back here
     if (q !== ``) {
-      console.log(q, 'redirecting to', `/items?q=${q}&limit=4`);
-      Router.push(`/items?q=${q}&limit=4`);
+      window.location.replace(`/items?q=${q}&limit=4`);
     }
   };
 
