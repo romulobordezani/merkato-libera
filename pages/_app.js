@@ -1,7 +1,22 @@
-import App from 'next/app';
+import React from 'react';
+import App, { Container } from 'next/app';
+
 import style from '../components/_SassLib/_colors.scss';
+import Layout from '../components/Layout';
 
 class MeliApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <Container>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Container>
+    );
+  }
+
   componentDidCatch(error, errorInfo) {
     /*
      This adds awesome possibilities like:

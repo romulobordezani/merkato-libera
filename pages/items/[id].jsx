@@ -3,16 +3,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { getItemIgniter } from '../../igniters';
-import Layout from '../../components/Layout';
 import ItemDetails from '../../components/ItemDetails';
+import gridSystem from '../../components/_SassLib/Grid/Grid.scss';
 
 const ItemShowRoom = ({ item }) => {
   const router = useRouter();
+
   return (
-    <Layout title={item.title} grid="details">
-      {item && <ItemDetails item={item} />}
-      {!item && <div>Producto {router.query.id} no encontrado.</div>}
-    </Layout>
+    <div className={`${gridSystem.detailsGrid}`}>
+      <div className={`${gridSystem.detailsGrid_contentBox}`}>
+        {item && <ItemDetails item={item} />}
+        {!item && <div>Producto {router.query.id} no encontrado.</div>}
+      </div>
+    </div>
   );
 };
 
