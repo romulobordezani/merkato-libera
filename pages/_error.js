@@ -1,15 +1,15 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import gridSystem from '../components/_SassLib/Grid/Grid.scss';
+
 class Error extends Component {
-  // Method used by next.js on runtime
-  // eslint-disable-next-line
   static getInitialProps({ res, err }) {
+    // eslint-disable-next-line
     const statusCode = res ? res.statusCode : err ? err.statusCode : null;
     return { statusCode };
   }
 
-  // eslint-disable-next-line
   static propTypes = {
     statusCode: PropTypes.number
   };
@@ -20,11 +20,13 @@ class Error extends Component {
 
   render() {
     return (
-      <Fragment>
-        {this.props.statusCode
-          ? `Error ${this.props.statusCode} en el servidor.`
-          : 'Oops, falló la aplicaccíon.'}
-      </Fragment>
+      <div className={`${gridSystem.mainGrid}`}>
+        <div className={`${gridSystem.mainGrid_contentBox}`} style={{ marginTop: '16px', padding: '16px' }}>
+          {this.props.statusCode
+            ? `Error ${this.props.statusCode} en el servidor.`
+            : 'Oops, falló la aplicacíon.'}
+        </div>
+      </div>
     );
   }
 }

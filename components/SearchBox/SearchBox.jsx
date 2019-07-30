@@ -35,6 +35,7 @@ const SearchBox = () => {
             setPlaceHolder(placeHolderDefault);
           }}
           placeholder={placeHolder}
+          /* eslint-disable-next-line */
           autoFocus
         />
         <button className={styles['search-box_submit-button']} type="submit" />

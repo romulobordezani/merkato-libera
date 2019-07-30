@@ -13,11 +13,14 @@ const ItemDetails = ({ item }) => {
 
       <div className={styles.ItemDetails_infoBox}>
         <div className={styles.ItemDetails_infoBox_info}>
-          {item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.sold_quantity} vendido{item.sold_quantity > 1 && 's'}
+          {item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.sold_quantity} vendido
+          {item.sold_quantity > 1 && 's'}
         </div>
         <div className={styles.ItemDetails_infoBox_title}>{item.title}</div>
         <Price item={item} fontSize="46px" />
-        <a href={item.permalink} className={styles.ItemDetails_infoBox_buyButton}>Comprar</a>
+        <a href={item.permalink} className={styles.ItemDetails_infoBox_buyButton}>
+          Comprar
+        </a>
       </div>
 
       <div className={styles.ItemDetails_descriptionBox}>

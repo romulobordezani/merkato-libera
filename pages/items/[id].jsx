@@ -58,7 +58,7 @@ ItemShowRoom.propTypes = {
     id: PropTypes.string.isRequired,
     price: PropTypes.shape({
       currency: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       decimals: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
     }).isRequired,
     free_shipping: PropTypes.bool.isRequired,
