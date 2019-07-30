@@ -1,7 +1,6 @@
 @import "../_SassLib/breakpoints";
 
 .ItemDetails {
-
   &_imgBox {
     padding-top: 32px;
     grid-area: imagBox;
@@ -19,7 +18,6 @@
         width: 680px;
         max-height: 680px;
       }
-
     }
   }
 
@@ -41,8 +39,6 @@
       font-size: 24px;
       font-weight: 500;
     }
-
-
 
     &_buyButton {
       display: inline-block;
