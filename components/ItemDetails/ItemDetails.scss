@@ -58,6 +58,10 @@
       font-size: 18px;
       width: 100%;
 
+      @include breakpoint($small) {
+        margin-top: 16px;
+      }
+
       &:hover {
         background: lighten(#3483FA, 10%);
       }
@@ -87,6 +91,7 @@
       white-space: pre-line;
       line-height: 20px;
       font-size: 16px;
+      word-break: break-all;
     }
   }
 }

@@ -2,31 +2,16 @@
 @import "../_SassLib/colors";
 
 .categories-breadcrumb {
-  position: relative;
-  width: 100%;
   font-size: 14px;
   background: transparent;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
+  $mobilePadding: 0.2%;
+  grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
   grid-template-areas: ". BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid .";
-
   column-gap: 1%;
-
   margin: 0 2%;
   height: 100%;
-
-  $mobilePadding: 0.2%;
-
-  $mobilePadding: 0.2%;
-
-  @include breakpoint($small) {
-    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
-  }
-
-  @include breakpoint($medium) {
-    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
-  }
 
   @include breakpoint($small) {
     margin-bottom: 16px;
