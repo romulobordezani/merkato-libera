@@ -1,0 +1,28 @@
+{
+  "short_name": "Meli Front Test",
+  "name": "Meli Front Test",
+  "description": "App de test Meli por Romulo Bordezani.",
+  "dir": "rtl",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "144x144 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#02659B",
+  "background_color": "#02659B"
+}

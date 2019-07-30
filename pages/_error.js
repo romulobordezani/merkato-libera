@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import Layout from "../components/Layout";
 
 class Error extends Component {
-  // Method used by next on runtime
+  // Method used by next.js on runtime
   // eslint-disable-next-line
   static getInitialProps({ res, err }) {
     const statusCode = res ? res.statusCode : err ? err.statusCode : null;
     return { statusCode };
   }
 
+  // eslint-disable-next-line
   static propTypes = {
     statusCode: PropTypes.number
   };
@@ -20,11 +20,11 @@ class Error extends Component {
 
   render() {
     return (
-      <Layout>
+      <Fragment>
         {this.props.statusCode
-          ? `Erro ${this.props.statusCode} no servidor.`
-          : 'Oops, ocorreu um erro na aplicação.'}
-      </Layout>
+          ? `Error ${this.props.statusCode} en el servidor.`
+          : 'Oops, falló la aplicaccíon.'}
+      </Fragment>
     );
   }
 }
