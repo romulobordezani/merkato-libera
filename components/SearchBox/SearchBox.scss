@@ -6,6 +6,12 @@
   overflow: hidden;
   border-radius: 4px;
 
+  &__error {
+    :global {
+      animation: shake 0.6s cubic-bezier(0, 0.2, 0.8, 1);
+    }
+  }
+
   &_field {
     width: 94%;
     padding: 8px 60px 8px 15px;
