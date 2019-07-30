@@ -23,6 +23,6 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#02659B",
-  "background_color": "#02659B"
+  "theme_color": "#FFE600",
+  "background_color": "#FFE600"
 }
