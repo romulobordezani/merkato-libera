@@ -13,7 +13,7 @@ const ItemDetails = ({ item }) => {
 
       <div className={styles.ItemDetails_infoBox}>
         <div className={styles.ItemDetails_infoBox_info}>
-          {item.condition} - {item.sold_quantity} vendidos
+          {item.condition === 'new' ? 'Nuevo' : 'Usado'} - {item.sold_quantity} vendido{item.sold_quantity > 1 && 's'}
         </div>
         <div className={styles.ItemDetails_infoBox_title}>{item.title}</div>
         {item.free_shipping && <p>Frete: Gratis.</p>}
