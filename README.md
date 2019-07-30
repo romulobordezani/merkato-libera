@@ -40,6 +40,6 @@ yarn run test
 yarn run lint
 ```
 
-Thanks for this test opportunity, I had a lot of fun learning Next.js and a lot of other stuff on this project. 
+Thanks for this test opportunity, I had a lot of fun learning Next.js and other stuff while working on this project. 
 
-And sorry if I left any 🐞.
+And sorry if I left any 🐞 behind.
