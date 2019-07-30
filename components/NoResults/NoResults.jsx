@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './NoResults.scss';
 
@@ -12,10 +11,6 @@ const NoResults = () => {
       <div className={styles.NoResults_message}>Ningún resultado para la busqueda.</div>
     </div>
   );
-};
-
-NoResults.propTypes = {
-  item: PropTypes.object.isRequired
 };
 
 export default NoResults;

@@ -23,7 +23,11 @@ CategoriesBreadcrumb.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired
     }).isRequired
-  }).isRequired
+  })
+};
+
+CategoriesBreadcrumb.defaultProps = {
+  item: null
 };
 
 export default CategoriesBreadcrumb;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoResults Snapshot renders default 1`] = `
+<div>
+  <div>
+    <img
+      alt="Not Found"
+      src="/images/page-not-found.svg"
+    />
+  </div>
+  <div>
+    Ningún resultado para la busqueda.
+  </div>
+</div>
+`;

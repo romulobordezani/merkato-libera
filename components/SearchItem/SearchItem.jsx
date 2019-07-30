@@ -3,7 +3,6 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import styles from './SearchItem.scss';
-import { getItemIgniter } from '../../igniters';
 import Price from '../Price';
 import ShippingBadge from '../ShippingBadge';
 
@@ -28,7 +27,5 @@ const SearchItem = ({ item }) => {
 SearchItem.propTypes = {
   item: PropTypes.object.isRequired
 };
-
-SearchItem.getInitialProps = getItemIgniter;
 
 export default SearchItem;

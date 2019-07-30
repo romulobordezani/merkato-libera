@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Snapshot renders default 1`] = `
+<div>
+  <img
+    alt="Mercado Livre"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    src="/images/Logo_ML.png"
+    srcSet="/images/Logo_ML@2x.png.png 1000w, /images/Logo_ML@2x.png.png  2000w"
+  />
+</div>
+`;

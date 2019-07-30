@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesBreadcrumb Snapshot renders default 1`] = `
+<div>
+  <div>
+    <span>
+       
+    </span>
+  </div>
+</div>
+`;

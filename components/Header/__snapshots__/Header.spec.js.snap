@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Snapshot renders default 1`] = `
+<div
+  className="undefined"
+  style={
+    Object {
+      "background": "#FFE600",
+      "height": "56px",
+      "left": 0,
+      "position": "sticky",
+      "top": 0,
+      "width": "100%",
+      "zIndex": 1000,
+    }
+  }
+>
+  <div
+    className="undefined"
+  >
+    <div
+      className="undefined"
+    >
+      <div>
+        <img
+          alt="Mercado Livre"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          src="/images/Logo_ML.png"
+          srcSet="/images/Logo_ML@2x.png.png 1000w, /images/Logo_ML@2x.png.png  2000w"
+        />
+      </div>
+      <div
+        className=" undefined"
+        onSubmit={[Function]}
+      >
+        <form
+          autoComplete="on"
+        >
+          <input
+            autoFocus={true}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Nunca dejes de buscar"
+            type="text"
+          />
+          <button
+            type="submit"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;

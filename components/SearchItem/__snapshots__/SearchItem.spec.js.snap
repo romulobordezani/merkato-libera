@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchItem Snapshot renders default 1`] = `
+<div
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div>
+    <img
+      alt="Botella Deportiva Térmica Reutilizable Pura Vita 500 Ml"
+      src="https://mla-s1-p.mlstatic.com/943145-MLA31085352819_062019-O.jpg"
+    />
+  </div>
+  <div>
+    <span
+      style={
+        Object {
+          "fontSize": "24px",
+        }
+      }
+    >
+      <span>
+        $
+      </span>
+      <span>
+        1.800
+      </span>
+      <span>
+        
+      </span>
+    </span>
+    <div>
+      Botella Deportiva Térmica Reutilizable Pura Vita 500 Ml
+    </div>
+  </div>
+  <div />
+</div>
+`;

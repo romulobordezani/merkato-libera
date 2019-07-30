@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox Snapshot renders default 1`] = `
+<div
+  className=" undefined"
+  onSubmit={[Function]}
+>
+  <form
+    autoComplete="on"
+  >
+    <input
+      autoFocus={true}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Nunca dejes de buscar"
+      type="text"
+    />
+    <button
+      type="submit"
+    />
+  </form>
+</div>
+`;

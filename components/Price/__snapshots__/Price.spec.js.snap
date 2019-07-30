@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price Snapshot renders default 1`] = `
+<span
+  style={
+    Object {
+      "fontSize": "36px",
+    }
+  }
+>
+  <span>
+    $
+  </span>
+  <span>
+    1.800
+  </span>
+  <span>
+    
+  </span>
+</span>
+`;
