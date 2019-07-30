@@ -1,46 +1,45 @@
 # Meli FE test
 
-![Meli](https://raw.githubusercontent.com/romulobordezani/merkato-libera/master/static/images/logo-pt__large_plus.png)
+![Meli](https://raw.githubusercontent.com/romulobordezani/merkato-libera/master/static/apple-touch-icon.png)
 
-This repository contains the Front End Test for Meli, made with a lot of passion and hope to one day join Meli's team 😍.
+This repository contains the `Front End Test for Meli`, made by Romulo Bordezani, with a lot of love and hope to one day join Meli's team 😍.
 
-Webapp available at: [meli-front-end-test.herokuapp.com](https://meli-front-end-test.herokuapp.com/).
+### On Production
+I left a *Progressive Web App* available at: [meli-front-end-test.herokuapp.com](https://meli-front-end-test.herokuapp.com/).
 
-## Installing
+### Free Hosting
+NOTE: It's a heroku free app, so, it sleeps when idle. 
+As expected, the very first load could take between 10 or 30 sec, while the Docker Whale awakes 🐳
 
+### What is done
+I was able to finish the main issues in the challenge, but I found something else to do that deserves attention.
+Please take a look at the [TODO Dynalist](https://dynalist.io/d/n7bvXIbrRFCRwDLh3RW5y2np) related to this project, if you have a chance. 
+There you can find what is missing and what is accomplished.
+
+----
+
+## Getting the hands dirty
+
+### Installing
 ```bash
 yarn 
 ```
 
-## How to run locally
+### How to run locally
 ```bash
 yarn run dev
 ```
 
+### Running tests
+```bash
+yarn run test
+```
 
-## Running linters
+### Running linters
 ```bash
 yarn run lint
 ```
 
-Auto fix:
-```bash
-yarn run lint:fix
-```
+Thanks for this test opportunity, I had a lot of fun learning Next.js and a lot of other stuff on this project. 
 
-## Running Unit Tests ( WIP )
-```bash
-yarn run lint:test
-```
-
-## How to deploy
-You will need access to [Heroku git](https://git.heroku.com/meli-front-end-test.git) first.
-
-Every push on master will trigger the Pipeline. 
-```
-git push heroku master
-```
-
-TODO - Add unit tests and block deploys when tests are failing.
-
-Please follow my TODO list for this test at [Dynalist](https://dynalist.io/d/n7bvXIbrRFCRwDLh3RW5y2np).
+And sorry if I left any 🐞.
