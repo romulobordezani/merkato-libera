@@ -12,6 +12,7 @@ async function getItem(req, res) {
 
   try {
     const url = `${MELI_API}/items/${id}`;
+
     // Gets general Info
     const meliAPIres = await fetch(url);
     const data = await meliAPIres.json();
@@ -21,22 +22,25 @@ async function getItem(req, res) {
       return res.sendStatus(404).end();
     }
 
-    // Gets Description, only if the product exists
+    // Gets Description, but only if product exists
     const meliAPIresForDescription = await fetch(`${url}/description`);
     const description = await meliAPIresForDescription.json();
 
-    logger.debug(`API used to get Item Id: ${id}`);
+    // Gets the Category Breadcrumb
+    const meliAPIresForCategory = await fetch(`${MELI_API}/categories/${data.category_id}`);
+    const category = await meliAPIresForCategory.json();
 
     const item = new Item(data);
 
     // Adds Description to item
     item.description = description.plain_text;
+    item.categories = category.path_from_root.map(category => category.name);
 
     return res.json({
       author,
-      item,
-      data
+      item
     });
+
   } catch (error) {
     logger.error(error);
     return res.status(500).json( error );

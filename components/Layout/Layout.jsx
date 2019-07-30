@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import Header from '../Header';
-import CategoriesBreadcrumb from '../CategoriesBreadcrumb';
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +15,6 @@ const Layout = ({ children }) => {
         <meta name="theme-color" content="#FFE600" />
       </Head>
       <Header />
-      <CategoriesBreadcrumb />
       {children}
     </div>
   );

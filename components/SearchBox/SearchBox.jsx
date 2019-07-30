@@ -17,7 +17,7 @@ const SearchBox = () => {
     }
 
     setAnimation(styles['search-box__error']);
-    setPlaceHolder('Y o que buscas hoy?');
+    setPlaceHolder('Por favor, qué buscas?');
 
     setTimeout(() => {
       setAnimation('');

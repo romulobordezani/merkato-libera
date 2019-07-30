@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { getItemIgniter } from '../../igniters';
 import ItemDetails from '../../components/ItemDetails';
 import gridSystem from '../../components/_SassLib/Grid/Grid.scss';
+import CategoriesBreadcrumb from '../../components/CategoriesBreadcrumb';
 
 const ItemShowRoom = ({ item }) => {
   const router = useRouter();
@@ -40,6 +41,7 @@ const ItemShowRoom = ({ item }) => {
         <meta name="twitter:app:url:googleplay" content={`meli://item?id=${item.id}`} />
         <meta name="twitter:domain" content="mercadolivre.com.br" />
       </Head>
+      <CategoriesBreadcrumb item={item} />
       <div className={`${gridSystem.detailsGrid}`}>
         <div className={`${gridSystem.detailsGrid_contentBox}`}>
           {item && <ItemDetails item={item} />}
@@ -52,7 +54,19 @@ const ItemShowRoom = ({ item }) => {
 
 ItemShowRoom.propTypes = {
   item: PropTypes.shape({
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    price: PropTypes.shape({
+      currency: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      decimals: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+    }).isRequired,
+    free_shipping: PropTypes.bool.isRequired,
+    picture: PropTypes.string.isRequired,
+    condition: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    sold_quantity: PropTypes.number.isRequired,
+    permalink: PropTypes.string.isRequired
   }).isRequired
 };
 

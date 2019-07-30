@@ -1,9 +1,80 @@
+@import "../_SassLib/breakpoints";
+@import "../_SassLib/colors";
+
 .categories-breadcrumb {
   position: relative;
   width: 100%;
-  height: 14px;
   font-size: 14px;
-  display: block;
   background: transparent;
-  margin: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid .";
+
+  column-gap: 1%;
+
+  margin: 0 2%;
+  height: 100%;
+
+  $mobilePadding: 0.2%;
+
+  $mobilePadding: 0.2%;
+
+  @include breakpoint($small) {
+    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
+  }
+
+  @include breakpoint($medium) {
+    grid-template-columns: $mobilePadding 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr $mobilePadding;
+  }
+
+  @include breakpoint($small) {
+    margin-bottom: 16px;
+  }
+
+  &_container {
+    grid-area: BreadGrid;
+  }
+
+  &_item{
+    display: inline-block;
+    margin: 0 15px;
+    padding: 16px 0;
+    color: $grey;
+
+    @include breakpoint($small) {
+      display: none;
+    }
+
+    &:before {
+      content: " > ";
+      position: relative;
+      left: -13px;
+      top: 1px;
+      width: 10px;
+      height: 10px;
+      color: grey;
+    }
+
+    &:first-child {
+      &:before {
+        content: "";
+        display: none;
+      }
+    }
+
+    &:last-child {
+      font-weight: 600;
+    }
+  }
 }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid BreadGrid .";
+}
+
+.BreadGrid { grid-area: BreadGrid; }
