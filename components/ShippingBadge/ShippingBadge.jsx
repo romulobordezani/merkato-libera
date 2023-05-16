@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ShippingBadge.scss';
+import styles from './ShippingBadge.module.scss';
 
 const ShippingBadge = ({ item }) => {
   const { freeShipping } = item;

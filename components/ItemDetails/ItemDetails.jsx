@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 
-import styles from './ItemDetails.scss';
+import styles from './ItemDetails.module.scss';
 import Price from '../Price';
 
 const ItemDetails = ({ item }) => {

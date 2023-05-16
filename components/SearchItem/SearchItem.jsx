@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import styles from './SearchItem.scss';
+import styles from './SearchItem.module.scss';
 import Price from '../Price';
 import ShippingBadge from '../ShippingBadge';
 
 const SearchItem = ({ item }) => {
   return (
-    <Link href="/items/[id]" as={`/items/${item.id}`}>
+    <Link href="/items/[id]" as={`/items/${item.id}`} legacyBehavior>
       <div className={styles.SearchItem}>
         <div className={styles.SearchItem_picture}>
           <img src={item.picture} alt={item.title} />

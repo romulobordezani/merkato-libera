@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './NoResults.scss';
+import styles from './NoResults.module.scss';
 
 const NoResults = () => {
   return (

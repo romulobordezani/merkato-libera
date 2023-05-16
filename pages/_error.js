@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import gridSystem from '../components/_SassLib/Grid/Grid.scss';
+import gridSystem from '../components/_SassLib/Grid/Grid.module.scss'; 
 
 class Error extends Component {
   static getInitialProps({ res, err }) {

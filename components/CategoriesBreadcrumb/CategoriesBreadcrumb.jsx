@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './CategoriesBreadcrumb.scss';
+import styles from './CategoriesBreadcrumb.module.scss';
 
-const CategoriesBreadcrumb = ({ item }) => {
+const CategoriesBreadcrumb = ({ item = null }) => {
   return (
     <div className={styles['categories-breadcrumb']}>
       <div className={styles['categories-breadcrumb_container']}>
@@ -24,10 +24,6 @@ CategoriesBreadcrumb.propTypes = {
       name: PropTypes.string.isRequired
     })
   })
-};
-
-CategoriesBreadcrumb.defaultProps = {
-  item: null
 };
 
 export default CategoriesBreadcrumb;
