@@ -5,7 +5,7 @@ import styles from './Logo.module.scss';
 
 const Logo = () => (
   <div className={styles.logo}>
-    <Link href="/">
+    <Link href="/" legacyBehavior>
       <img
         className={styles.logo_img}
         src="/images/Logo_ML.png"

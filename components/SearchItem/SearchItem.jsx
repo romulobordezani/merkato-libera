@@ -8,7 +8,7 @@ import ShippingBadge from '../ShippingBadge';
 
 const SearchItem = ({ item }) => {
   return (
-    <Link href="/items/[id]" as={`/items/${item.id}`}>
+    <Link href="/items/[id]" as={`/items/${item.id}`} legacyBehavior>
       <div className={styles.SearchItem}>
         <div className={styles.SearchItem_picture}>
           <img src={item.picture} alt={item.title} />
