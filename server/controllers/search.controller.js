@@ -8,7 +8,6 @@ const { MELI_API, MELI_SITE } = CONFIG();
 const author = new Author();
 
 async function queryItems(req, res){
-  console.log('HEre', req );
   const { q, limit, offset } = req.query;
 
   try {
