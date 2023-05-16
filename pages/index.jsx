@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { envIgniter } from '../igniters';
 
-const Index = () => <Fragment />;
+const Index = () => <Fragment/>;
 
 Index.getInitialProps = envIgniter;
 

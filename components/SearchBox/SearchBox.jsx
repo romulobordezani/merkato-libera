@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Router from 'next/router';
-import styles from './SearchBox.scss';
+import styles from './SearchBox.module.scss';
 
 const SearchBox = () => {
   const [q, setQ] = useState('');

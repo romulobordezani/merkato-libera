@@ -18,7 +18,7 @@ NextApp.prepare().then(() => {
   server.use('/api/items', require('./routes'));
 
   // All Static files on root /
-  server.use(serveStatic(path.resolve('./static')));
+  server.use(serveStatic(path.resolve('./public')));
 
   // service-worker.js
   server.get('/service-worker.js', (req, res) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import styles from './SearchItem.scss';
+import styles from './SearchItem.module.scss';
 import Price from '../Price';
 import ShippingBadge from '../ShippingBadge';
 

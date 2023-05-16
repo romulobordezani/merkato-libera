@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Price.scss';
+import styles from './Price.module.scss';
 
 const Price = ({ fontSize, item }) => {
   const { price } = item;

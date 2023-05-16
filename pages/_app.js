@@ -1,11 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
-import App, { Container } from 'next/app';
+import App  from 'next/app';
 
-/* Non used .scss loaded here due to a next.js bug while routing, please don't remove
- *  https://github.com/papasunnee/pret-app/commit/35cb10540d1062e39bea862411caf5f75885bac0
- */
-// eslint-disable-next-line
 import style from '../components/_SassLib/_colors.scss';
 
 import Layout from '../components/Layout';
@@ -15,7 +11,7 @@ class MeliApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <Head>
           <title>Mercado Libre</title>
           <link rel="stylesheet" href="/styles/normalize.min.css" />
@@ -35,7 +31,7 @@ class MeliApp extends App {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </Container>
+      </>
     );
   }
 

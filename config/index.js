@@ -6,4 +6,4 @@ const CONFIG = () => ({
   dev: process.env.NODE_ENV !== 'production'
 });
 
-module.exports = CONFIG;
+module.exports = CONFIG; 

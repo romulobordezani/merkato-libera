@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import { getItemIgniter } from '../../igniters';
 import ItemDetails from '../../components/ItemDetails';
-import gridSystem from '../../components/_SassLib/Grid/Grid.scss';
+import gridSystem from '../../components/_SassLib/Grid/Grid.module.scss';
 import CategoriesBreadcrumb from '../../components/CategoriesBreadcrumb';
 
 const ItemShowRoom = ({ item }) => {

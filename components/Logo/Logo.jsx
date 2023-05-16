@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import styles from './Logo.scss';
+import styles from './Logo.module.scss';
 
 const Logo = () => (
   <div className={styles.logo}>

@@ -3,8 +3,8 @@ import React, { Fragment } from 'react';
 
 import { searchIgniter } from '../igniters';
 import SearchItem from '../components/SearchItem';
-import gridSystem from '../components/_SassLib/Grid/Grid.scss';
-import CategoriesBreadcrumb from '../components/CategoriesBreadcrumb';
+import gridSystem from '../components/_SassLib/Grid/Grid.module.scss';
+import CategoriesBreadcrumb from '../components/CategoriesBreadcrumb'; 
 import NoResults from '../components/NoResults';
 
 const Item = props => (
