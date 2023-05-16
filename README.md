@@ -1,6 +1,6 @@
 # Meli FE test
 
-![Meli](https://raw.githubusercontent.com/romulobordezani/merkato-libera/master/static/apple-touch-icon.png)
+![Meli](https://raw.githubusercontent.com/romulobordezani/merkato-libera/master/public/apple-touch-icon.png)
 
 This repository contains the `Front End Test for Meli`, made by Romulo Bordezani, with a lot of love and hope to one day join Meli's team 😍.
 
