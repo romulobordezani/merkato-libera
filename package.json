@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mercado Livre Front-end test ",
   "main": "index.js",
+  "engines": { "node": "18.3.0"},
   "scripts": {
     "test": "jest",
     "dev": "cross-env API_URL=http://localhost:3000 node server/index.js",
